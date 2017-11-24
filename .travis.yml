@@ -1,0 +1,30 @@
+language: php
+dist: trusty
+sudo: false
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+php:
+  - 7.0
+  - 7.1
+  - 7.2
+
+install: composer install --prefer-dist --prefer-stable --no-interaction
+
+script: bin/phpunit --enforce-time-limit
+
+jobs:
+  include:
+    - stage: Test
+      env: XDEBUG=true
+      before_install: echo "Do not remove XDEBUG"
+
+    - env: VENDOR=prefer-lowest
+      install: composer update --prefer-lowest --prefer-dist --prefer-stable --no-interaction
+
+    - env: VENDOR=lock
+      install: composer install --prefer-dist --no-interaction
+
+    - env: CS-FIXER=true
+      script: composer cs-check
