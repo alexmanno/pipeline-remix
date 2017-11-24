@@ -21,7 +21,7 @@ jobs:
       before_install: echo "Do not remove XDEBUG"
 
     - env: VENDOR=prefer-lowest
-      install: composer update --prefer-lowest --prefer-dist --prefer-stable --no-interaction
+      install: composer update --prefer-lowest --prefer-dist --no-interaction
 
     - env: VENDOR=lock
       install: composer install --prefer-dist --no-interaction
