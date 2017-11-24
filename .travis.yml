@@ -10,7 +10,7 @@ php:
   - 7.1
   - 7.2
 
-install: composer install --prefer-dist --prefer-stable --no-interaction
+install: composer install --prefer-dist --no-interaction
 
 script: bin/phpunit --enforce-time-limit
 
