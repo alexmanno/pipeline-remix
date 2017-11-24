@@ -1,0 +1,34 @@
+{
+    "name": "alexmanno/pipeline-remix",
+    "description": "Reinvented pipelines for PHP",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alessandro Manno",
+            "email": "alessandromanno96@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Remix\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "psr/http-message": "^1.0"
+    },
+    "require-dev": {
+        "facile-it/paraunit": "^0.10.1",
+        "phpspec/prophecy": "^1.7",
+        "facile-it/facile-coding-standard": "^0.1.0"
+    },
+    "scripts": {
+        "cs-check": "php-cs-fixer fix --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix --diff"
+    }
+}
