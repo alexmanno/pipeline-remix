@@ -12,4 +12,4 @@ php:
 
 install: composer install
 
-script: bin/phpunit -c phpunit.xml.dist
+script: vendor/bin/phpunit -v
