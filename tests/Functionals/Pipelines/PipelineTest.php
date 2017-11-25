@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Functionals\Pipelines;
+namespace AlexManno\Remix\Tests\Functionals\Pipelines;
 
-use Remix\Pipelines\Interfaces\StageInterface;
-use Remix\Pipelines\Pipeline;
-use Tests\TestCase;
+use AlexManno\Remix\Pipelines\Interfaces\StageInterface;
+use AlexManno\Remix\Pipelines\Pipeline;
+use AlexManno\Remix\Tests\TestCase;
 
 class PipelineTest extends TestCase
 {

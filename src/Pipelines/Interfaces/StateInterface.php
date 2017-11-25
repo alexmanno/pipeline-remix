@@ -1,6 +1,6 @@
 <?php
 
-namespace Remix\Pipelines\Interfaces;
+namespace AlexManno\Remix\Pipelines\Interfaces;
 
 interface StateInterface
 {

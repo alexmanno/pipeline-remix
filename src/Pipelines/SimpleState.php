@@ -1,12 +1,12 @@
 <?php
 
-namespace Remix\Pipelines;
+namespace AlexManno\Remix\Pipelines;
 
-use Remix\Pipelines\Interfaces\StateInterface;
+use AlexManno\Remix\Pipelines\Interfaces\StateInterface;
 
 class SimpleState implements StateInterface
 {
-    public $data;
+    private $data;
 
     /**
      * @return mixed

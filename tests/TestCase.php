@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests;
+namespace AlexManno\Remix\Tests;
 
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 use Prophecy\Prophet;
-use Remix\Pipelines\Interfaces\StageInterface;
-use Remix\Pipelines\SimpleState;
+use AlexManno\Remix\Pipelines\Interfaces\StageInterface;
+use AlexManno\Remix\Pipelines\SimpleState;
 
 class TestCase extends PHPUnitTestCase
 {
@@ -14,7 +14,7 @@ class TestCase extends PHPUnitTestCase
 
     protected function setup()
     {
-        $this->prophet = new \Prophecy\Prophet();
+        $this->prophet = new Prophet();
     }
 
     protected function tearDown()

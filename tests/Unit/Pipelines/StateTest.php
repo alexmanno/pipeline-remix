@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Pipelines\Unit;
+namespace AlexManno\Remix\Tests\Pipelines\Unit;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Remix\Pipelines\RequestResponseState;
-use Tests\TestCase;
+use AlexManno\Remix\Pipelines\RequestResponseState;
+use AlexManno\Remix\Tests\TestCase;
 
 class StateTest extends TestCase
 {

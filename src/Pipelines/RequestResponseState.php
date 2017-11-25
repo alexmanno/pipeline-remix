@@ -1,15 +1,16 @@
 <?php
 
-namespace Remix\Pipelines;
+namespace AlexManno\Remix\Pipelines;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Remix\Pipelines\Interfaces\StateInterface;
+use AlexManno\Remix\Pipelines\Interfaces\StateInterface;
 
 class RequestResponseState implements StateInterface
 {
     /** @var RequestInterface */
     public $request;
+
     /** @var ResponseInterface */
     public $response;
 
@@ -31,7 +32,7 @@ class RequestResponseState implements StateInterface
      *
      * @return RequestResponseState
      */
-    public static function create(RequestInterface $request, ResponseInterface $response)
+    public static function create(RequestInterface $request, ResponseInterface $response): self
     {
         return new self($request, $response);
     }

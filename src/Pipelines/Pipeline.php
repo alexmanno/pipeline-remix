@@ -1,10 +1,10 @@
 <?php
 
-namespace Remix\Pipelines;
+namespace AlexManno\Remix\Pipelines;
 
-use Remix\Pipelines\Interfaces\PipelineInterface;
-use Remix\Pipelines\Interfaces\StageInterface;
-use Remix\Pipelines\Interfaces\StateInterface;
+use AlexManno\Remix\Pipelines\Interfaces\PipelineInterface;
+use AlexManno\Remix\Pipelines\Interfaces\StageInterface;
+use AlexManno\Remix\Pipelines\Interfaces\StateInterface;
 use SplQueue;
 
 class Pipeline implements PipelineInterface
