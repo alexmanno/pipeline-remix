@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Pipelines;
+namespace Tests\Pipelines\Unit;
 
 use Remix\Pipelines\Interfaces\StageInterface;
 use Remix\Pipelines\Interfaces\StateInterface;

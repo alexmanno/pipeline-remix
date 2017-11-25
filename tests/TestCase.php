@@ -5,6 +5,7 @@ namespace Tests;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 use Prophecy\Prophet;
 use Remix\Pipelines\Interfaces\StageInterface;
+use Remix\Pipelines\SimpleState;
 
 class TestCase extends PHPUnitTestCase
 {
@@ -30,5 +31,13 @@ class TestCase extends PHPUnitTestCase
         $phropecy->willImplement(StageInterface::class);
 
         return $phropecy->reveal();
+    }
+
+    /**
+     * @return SimpleState
+     */
+    protected function createState(): SimpleState
+    {
+        return new SimpleState();
     }
 }

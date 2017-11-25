@@ -6,7 +6,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Remix\Pipelines\Interfaces\StateInterface;
 
-class State implements StateInterface
+class RequestResponseState implements StateInterface
 {
     /** @var RequestInterface */
     public $request;
@@ -29,7 +29,7 @@ class State implements StateInterface
      * @param RequestInterface  $request
      * @param ResponseInterface $response
      *
-     * @return State
+     * @return RequestResponseState
      */
     public static function create(RequestInterface $request, ResponseInterface $response)
     {
@@ -47,7 +47,7 @@ class State implements StateInterface
     /**
      * @param RequestInterface $request
      *
-     * @return State
+     * @return RequestResponseState
      */
     public function setRequest(RequestInterface $request): self
     {
@@ -67,7 +67,7 @@ class State implements StateInterface
     /**
      * @param ResponseInterface $response
      *
-     * @return State
+     * @return RequestResponseState
      */
     public function setResponse(ResponseInterface $response): self
     {

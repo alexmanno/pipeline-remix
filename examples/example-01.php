@@ -8,9 +8,8 @@ use Remix\Pipelines\SimpleState;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-class TextState extends SimpleState
+$state = new class extends SimpleState
 {
-
     public $data = '';
 
     public function append(string $paragraph)
@@ -19,37 +18,29 @@ class TextState extends SimpleState
 
         return $this;
     }
-}
+};
 
-class SayHello implements StageInterface
+$sayHello = new class implements StageInterface
 {
-    /**
-     * @param TextState $state
-     */
     public function __invoke($state)
     {
         return $state->append('Hello!');
     }
-}
+};
 
-class SayMyNameIsAlessandro implements StageInterface
+$sayMyNameIsAlessandro = new class implements StageInterface
 {
-    /**
-     * @param TextState $state
-     */
     public function __invoke($state)
     {
         return $state->append('My name is Alessandro!');
     }
-}
-
+};
 
 $pipeline = new Pipeline();
 
-/** @var TextState $state */
 $state = $pipeline
-    ->pipe(new SayHello)               // Append "Hello!" to TextState
-    ->pipe(new SayMyNameIsAlessandro)  // Append "My name is Alessandro" to TextState
-    ->run(new TextState);              // Pass an initial State
+    ->pipe($sayHello)               // Append "Hello!" to TextState
+    ->pipe($sayMyNameIsAlessandro)  // Append "My name is Alessandro" to TextState
+    ->run($state);                  // Pass an initial State
 
 echo $state->get(); // Print: Hello! My name is Alessandro!

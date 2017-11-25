@@ -101,6 +101,11 @@ $state = $pipeline1->run($state); // Run pipeline: invoke $stage1 (from $pipelin
 
 ```
 
+## Examples
+
+ * Using Classes [Example-00](examples/example-00.php)
+ * Using Anonymous classes [Example-01](examples/example-01.php)
+
 
 ## Conclusion
 

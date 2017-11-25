@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Pipelines;
+namespace Tests\Pipelines\Unit;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Remix\Pipelines\State;
+use Remix\Pipelines\RequestResponseState;
 use Tests\TestCase;
 
 class StateTest extends TestCase
@@ -14,7 +14,7 @@ class StateTest extends TestCase
         $request = $this->prophesize()->willImplement(RequestInterface::class)->reveal();
         $response = $this->prophesize()->willImplement(ResponseInterface::class)->reveal();
 
-        $state = new State($request, $response);
+        $state = new RequestResponseState($request, $response);
 
         $this->assertSame($request, $state->getRequest());
         $this->assertSame($response, $state->getResponse());
@@ -25,7 +25,7 @@ class StateTest extends TestCase
         $request = $this->prophesize()->willImplement(RequestInterface::class)->reveal();
         $response = $this->prophesize()->willImplement(ResponseInterface::class)->reveal();
 
-        $state = State::create($request, $response);
+        $state = RequestResponseState::create($request, $response);
 
         $this->assertSame($request, $state->getRequest());
         $this->assertSame($response, $state->getResponse());
@@ -38,7 +38,7 @@ class StateTest extends TestCase
         $response = $this->prophesize()->willImplement(ResponseInterface::class)->reveal();
         $response2 = $this->prophesize()->willImplement(ResponseInterface::class)->reveal();
 
-        $state = new State($request, $response);
+        $state = new RequestResponseState($request, $response);
 
         $state->setRequest($request2);
         $state->setResponse($response2);
