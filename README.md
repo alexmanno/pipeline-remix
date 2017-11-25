@@ -57,7 +57,7 @@ Ex.
 
 ### State
 
-State is an object that implements `StateInterface` and can store all kind of data.
+State is an object that implements `StateInterface` and can store any kind of data.
 For example in a web application it can store `Request` and `Response`.
 
 Ex.
