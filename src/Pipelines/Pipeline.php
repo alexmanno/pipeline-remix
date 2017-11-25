@@ -54,7 +54,7 @@ class Pipeline implements PipelineInterface
     {
         $this->stages->rewind();
         while ($this->stages->valid()) {
-            $this->stages->current()($state);
+            $state = $this->stages->current()($state);
             $this->stages->next();
         }
 
