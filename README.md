@@ -106,6 +106,6 @@ $state = $pipeline1->run($state); // Run pipeline: invoke $stage1 (from $pipelin
 
 I hope you found useful this repo. Thanks for attention. 
 
-Made with :heart: from @alexmanno
+Made with :heart: by [@alexmanno](https://aka.am)
 
 
