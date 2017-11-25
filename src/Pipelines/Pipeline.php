@@ -4,7 +4,7 @@ namespace AlexManno\Remix\Pipelines;
 
 use AlexManno\Remix\Pipelines\Interfaces\PipelineInterface;
 use AlexManno\Remix\Pipelines\Interfaces\StageInterface;
-use AlexManno\Remix\Pipelines\Interfaces\StateInterface;
+use AlexManno\Remix\Pipelines\Interfaces\PayloadInterface;
 use SplQueue;
 
 class Pipeline implements PipelineInterface
@@ -50,14 +50,14 @@ class Pipeline implements PipelineInterface
         return $this->stages->count();
     }
 
-    public function run(StateInterface $state): StateInterface
+    public function __invoke(PayloadInterface $payload): PayloadInterface
     {
         $this->stages->rewind();
         while ($this->stages->valid()) {
-            $state = $this->stages->current()($state);
+            $payload = $this->stages->current()($payload);
             $this->stages->next();
         }
 
-        return $state;
+        return $payload;
     }
 }

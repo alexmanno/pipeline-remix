@@ -3,7 +3,7 @@
 namespace AlexManno\Remix\Tests\Pipelines\Unit;
 
 use AlexManno\Remix\Pipelines\Interfaces\StageInterface;
-use AlexManno\Remix\Pipelines\Interfaces\StateInterface;
+use AlexManno\Remix\Pipelines\Interfaces\PayloadInterface;
 use AlexManno\Remix\Pipelines\Pipeline;
 use AlexManno\Remix\Tests\TestCase;
 
@@ -43,21 +43,21 @@ class PipelineTest extends TestCase
     public function testRun()
     {
         $phropecy = $this->prophesize();
-        $phropecy->willImplement(StateInterface::class);
+        $phropecy->willImplement(PayloadInterface::class);
 
-        $state = $phropecy->reveal();
+        $payload = $phropecy->reveal();
 
         $phropecy = $this->prophesize();
         $phropecy->willImplement(StageInterface::class);
-        $phropecy->__invoke($state)->willReturn($state);
+        $phropecy->__invoke($payload)->willReturn($payload);
 
         $stage = $phropecy->reveal();
 
         $pipeline = new Pipeline();
         $pipeline->pipe($stage);
         $pipeline->pipe($stage);
-        $returnState = $pipeline->run($state);
+        $returnpayload = $pipeline($payload);
 
-        $this->assertSame($state, $returnState);
+        $this->assertSame($payload, $returnpayload);
     }
 }
