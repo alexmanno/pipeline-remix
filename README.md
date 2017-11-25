@@ -1,7 +1,15 @@
 # pipeline-remix
 Reinvented pipelines for PHP
 
-[![Latest Stable Version](https://poser.pugx.org/alexmanno/pipeline-remix/version)](https://packagist.org/packages/alexmanno/pipeline-remix) [![Total Downloads](https://poser.pugx.org/alexmanno/pipeline-remix/downloads)](https://packagist.org/packages/alexmanno/pipeline-remix) [![Latest Unstable Version](https://poser.pugx.org/alexmanno/pipeline-remix/v/unstable)](//packagist.org/packages/alexmanno/pipeline-remix) [![GitHub license](https://img.shields.io/github/license/alexmanno/pipeline-remix.svg)](https://github.com/alexmanno/pipeline-remix/blob/master/LICENSE.md) [![composer.lock available](https://poser.pugx.org/alexmanno/pipeline-remix/composerlock)](https://packagist.org/packages/alexmanno/pipeline-remix) [![Build Status](https://travis-ci.org/alexmanno/pipeline-remix.svg?branch=master)](https://travis-ci.org/alexmanno/pipeline-remix)
+[![Latest Stable Version](https://poser.pugx.org/alexmanno/pipeline-remix/version)](https://packagist.org/packages/alexmanno/pipeline-remix) 
+[![Total Downloads](https://poser.pugx.org/alexmanno/pipeline-remix/downloads)](https://packagist.org/packages/alexmanno/pipeline-remix) 
+[![Latest Unstable Version](https://poser.pugx.org/alexmanno/pipeline-remix/v/unstable)](//packagist.org/packages/alexmanno/pipeline-remix) 
+[![GitHub license](https://img.shields.io/github/license/alexmanno/pipeline-remix.svg)](https://github.com/alexmanno/pipeline-remix/blob/master/LICENSE.md) 
+[![composer.lock available](https://poser.pugx.org/alexmanno/pipeline-remix/composerlock)](https://packagist.org/packages/alexmanno/pipeline-remix) 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alexmanno/pipeline-remix/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alexmanno/pipeline-remix/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/alexmanno/pipeline-remix/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/alexmanno/pipeline-remix/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/alexmanno/pipeline-remix/badges/build.png?b=master)](https://scrutinizer-ci.com/g/alexmanno/pipeline-remix/build-status/master)
+
 
 ## What's a Pipeline
 A pipeline is a set of data processing elements connected in series, where the output of one element is the input of the next one.
