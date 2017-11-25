@@ -2,6 +2,7 @@
     "name": "alexmanno/pipeline-remix",
     "description": "Reinvented pipelines for PHP",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Alessandro Manno",
