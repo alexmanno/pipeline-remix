@@ -2,7 +2,6 @@
 Reinvented pipelines for PHP
 
 [![Latest Stable Version](https://poser.pugx.org/alexmanno/pipeline-remix/version)](https://packagist.org/packages/alexmanno/pipeline-remix) 
-[![Total Downloads](https://poser.pugx.org/alexmanno/pipeline-remix/downloads)](https://packagist.org/packages/alexmanno/pipeline-remix) 
 [![Latest Unstable Version](https://poser.pugx.org/alexmanno/pipeline-remix/v/unstable)](//packagist.org/packages/alexmanno/pipeline-remix) 
 [![GitHub license](https://img.shields.io/github/license/alexmanno/pipeline-remix.svg)](https://github.com/alexmanno/pipeline-remix/blob/master/LICENSE.md) 
 [![composer.lock available](https://poser.pugx.org/alexmanno/pipeline-remix/composerlock)](https://packagist.org/packages/alexmanno/pipeline-remix) 
