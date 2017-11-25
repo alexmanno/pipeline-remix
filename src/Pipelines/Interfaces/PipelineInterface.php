@@ -1,12 +1,12 @@
 <?php
 
-namespace Remix\Pipelines\Interfaces;
+namespace AlexManno\Remix\Pipelines\Interfaces;
 
-interface PipelineInterface
+use SplQueue;
+
+interface PipelineInterface extends StageInterface
 {
-    public function getStages(): \SplQueue;
+    public function getStages(): SplQueue;
 
-    public function pipe(StageInterface $stage): self;
-
-    public function run(StateInterface $state): StateInterface;
+    public function pipe(StageInterface $stage): PipelineInterface;
 }

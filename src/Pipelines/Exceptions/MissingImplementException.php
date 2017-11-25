@@ -1,6 +1,6 @@
 <?php
 
-namespace Remix\Pipelines\Exceptions;
+namespace AlexManno\Remix\Pipelines\Exceptions;
 
 class MissingImplementException extends \Exception
 {

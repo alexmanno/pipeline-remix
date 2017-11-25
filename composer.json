@@ -12,12 +12,12 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Remix\\": "src/"
+            "AlexManno\\Remix\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "AlexManno\\Remix\\Tests\\": "tests/"
         }
     },
     "require": {

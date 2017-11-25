@@ -1,8 +1,8 @@
 <?php
 
-namespace Remix\Pipelines\Interfaces;
+namespace AlexManno\Remix\Pipelines\Interfaces;
 
 interface StageInterface
 {
-    public function __invoke($state);
+    public function __invoke(PayloadInterface $payload): PayloadInterface;
 }

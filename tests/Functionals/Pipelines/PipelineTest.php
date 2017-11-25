@@ -1,10 +1,11 @@
 <?php
 
-namespace Tests\Functionals\Pipelines;
+namespace AlexManno\Remix\Tests\Functionals\Pipelines;
 
-use Remix\Pipelines\Interfaces\StageInterface;
-use Remix\Pipelines\Pipeline;
-use Tests\TestCase;
+use AlexManno\Remix\Pipelines\Interfaces\PayloadInterface;
+use AlexManno\Remix\Pipelines\Interfaces\StageInterface;
+use AlexManno\Remix\Pipelines\Pipeline;
+use AlexManno\Remix\Tests\TestCase;
 
 class PipelineTest extends TestCase
 {
@@ -15,14 +16,17 @@ class PipelineTest extends TestCase
         $pipeline = new Pipeline();
         $pipeline->pipe($addTwo); // Add 2
 
-        $state = $this->createState()->set(2);
-        $this->assertEquals(4, $pipeline->run($state)->get());
+        $payload = $this->createPayload();
+        $payload->setData(2);
+        $this->assertEquals(4, $pipeline($payload)->getData());
 
-        $state = $this->createState()->set(6);
-        $this->assertEquals(8, $pipeline->run($state)->get());
+        $payload = $this->createPayload();
+        $payload->setData(6);
+        $this->assertEquals(8, $pipeline($payload)->getData());
 
-        $state = $this->createState()->set(-2);
-        $this->assertEquals(0, $pipeline->run($state)->get());
+        $payload = $this->createPayload();
+        $payload->setData(-2);
+        $this->assertEquals(0, $pipeline($payload)->getData());
     }
 
     public function testPipeTwoStage()
@@ -35,18 +39,22 @@ class PipelineTest extends TestCase
             ->pipe($addTwo)// Add 2
             ->pipe($factorial); // Get factorial
 
-        $state = $this->createState()->set(4); // Set state = 4
+        $payload = $this->createPayload();
+        $payload->setData(4); // Set payload = 4
 
-        $this->assertEquals(720, $pipeline->run($state)->get());
+        $this->assertEquals(720, $pipeline($payload)->getData());
     }
 
     protected function getAddTwoStage()
     {
         return
-            new class() implements StageInterface {
-                public function __invoke($state)
+            new class() implements StageInterface
+            {
+                public function __invoke(PayloadInterface $payload): PayloadInterface
                 {
-                    return $state->set($state->get() + 2); // Add two
+                    $payload->setData($payload->getData() + 2); // Add two
+
+                    return $payload;
                 }
             };
     }
@@ -54,21 +62,24 @@ class PipelineTest extends TestCase
     protected function getFactorialStage()
     {
         return
-            new class() implements StageInterface {
-                public function __invoke($state)
+            new class() implements StageInterface
+            {
+                public function __invoke(PayloadInterface $payload): PayloadInterface
                 {
-                    $number = $state->get();
+                    $number = $payload->getData();
 
                     if ($number < 2) {
-                        return $state->set(1);
+                        $payload->setData(1);
+
+                        return $payload;
                     }
 
-                    return $state->set(
-                        $number *
-                        $this(
-                            $state->set($number - 1)
-                        )->get()
+                    $payload->setData($number - 1);
+                    $payload->setData(
+                        $number * $this($payload)->getData()
                     );
+
+                    return $payload;
                 }
             };
     }
