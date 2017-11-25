@@ -69,7 +69,7 @@ For example in a web application it can store `Request` and `Response`.
 
 Ex.
 ```php
-class Payload implements Remix\Pipelines\Interfaces\PayloadInterface
+class Payload implements AlexManno\Remix\Pipelines\Interfaces\PayloadInterface
 {
     /** @var RequestInterface */
     public $request;
@@ -112,7 +112,6 @@ $payload = $pipeline1($payload); // Run pipeline: invoke $stage1 (from $pipeline
 ## Examples
 
  * Using Classes [Example-00](examples/example-00.php)
- * Using Anonymous classes [Example-01](examples/example-01.php)
 
 
 ## Conclusion
