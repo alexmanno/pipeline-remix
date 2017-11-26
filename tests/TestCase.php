@@ -2,10 +2,10 @@
 
 namespace AlexManno\Remix\Tests;
 
-use PHPUnit\Framework\TestCase as PHPUnitTestCase;
-use Prophecy\Prophet;
 use AlexManno\Remix\Pipelines\Interfaces\StageInterface;
 use AlexManno\Remix\Pipelines\SimplePayload;
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use Prophecy\Prophet;
 
 class TestCase extends PHPUnitTestCase
 {

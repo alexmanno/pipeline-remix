@@ -2,8 +2,8 @@
 
 namespace AlexManno\Remix\Tests\Pipelines\Unit;
 
-use AlexManno\Remix\Pipelines\Interfaces\StageInterface;
 use AlexManno\Remix\Pipelines\Interfaces\PayloadInterface;
+use AlexManno\Remix\Pipelines\Interfaces\StageInterface;
 use AlexManno\Remix\Pipelines\Pipeline;
 use AlexManno\Remix\Tests\TestCase;
 

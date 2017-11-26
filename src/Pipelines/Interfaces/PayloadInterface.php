@@ -14,5 +14,5 @@ interface PayloadInterface
      *
      * @return void
      */
-    public function setData($data): void;
+    public function setData($data): self;
 }

@@ -48,8 +48,7 @@ class PipelineTest extends TestCase
     protected function getAddTwoStage()
     {
         return
-            new class() implements StageInterface
-            {
+            new class() implements StageInterface {
                 public function __invoke(PayloadInterface $payload): PayloadInterface
                 {
                     $payload->setData($payload->getData() + 2); // Add two
@@ -62,8 +61,7 @@ class PipelineTest extends TestCase
     protected function getFactorialStage()
     {
         return
-            new class() implements StageInterface
-            {
+            new class() implements StageInterface {
                 public function __invoke(PayloadInterface $payload): PayloadInterface
                 {
                     $number = $payload->getData();

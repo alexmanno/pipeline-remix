@@ -2,9 +2,9 @@
 
 namespace AlexManno\Remix\Pipelines;
 
+use AlexManno\Remix\Pipelines\Interfaces\PayloadInterface;
 use AlexManno\Remix\Pipelines\Interfaces\PipelineInterface;
 use AlexManno\Remix\Pipelines\Interfaces\StageInterface;
-use AlexManno\Remix\Pipelines\Interfaces\PayloadInterface;
 use SplQueue;
 
 class Pipeline implements PipelineInterface
@@ -38,7 +38,7 @@ class Pipeline implements PipelineInterface
 
         $queue->rewind();
         while ($queue->valid()) {
-            $this->stages->enqueue($queue->current());
+            $this->pipe($queue->current());
             $queue->next();
         }
 

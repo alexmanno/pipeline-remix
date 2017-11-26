@@ -8,5 +8,5 @@ interface PipelineInterface extends StageInterface
 {
     public function getStages(): SplQueue;
 
-    public function pipe(StageInterface $stage): PipelineInterface;
+    public function pipe(StageInterface $stage): self;
 }

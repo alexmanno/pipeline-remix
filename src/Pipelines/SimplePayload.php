@@ -19,8 +19,10 @@ class SimplePayload implements PayloadInterface
     /**
      * {@inheritdoc}
      */
-    public function setData($data): void
+    public function setData($data): PayloadInterface
     {
         $this->data = $data;
+
+        return $this;
     }
 }
