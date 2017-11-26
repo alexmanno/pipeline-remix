@@ -3,6 +3,10 @@
     "description": "Reinvented pipelines for PHP",
     "type": "library",
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/alexmanno/pipeline-remix/issues"
+    },
+    "homepage": "http://github.com/alexmanno/pipeline-remix",
     "authors": [
         {
             "name": "Alessandro Manno",
@@ -21,6 +25,7 @@
         }
     },
     "require": {
+        "php": "^7.1",
         "psr/http-message": "^1.0"
     },
     "require-dev": {
